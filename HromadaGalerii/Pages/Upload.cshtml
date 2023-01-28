@@ -1,0 +1,31 @@
+﻿@page
+@model HromadaGalerii.Pages.UploadModel
+@{
+}
+
+@if (Model.NotLoggedInMessage != null)
+{
+    <div class="alert alert-dark" role="alert">@Model.NotLoggedInMessage</div>
+}
+
+<h1>New file upload</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Upload" class="control-label">File</label>
+                <input type="file" asp-for="Upload" class="form-control-file" accept=".jpg, .jpeg, .png, .gif, .webp" multiple required />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Upload" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-page="/Index">Back</a>
+            </div>
+           
+            
+        </form>
+    </div>
+</div>
+
+
+
